@@ -1,0 +1,48 @@
+Use Case: Get Suggestions
+Context: This use case allows for a user to receive suggestions for certain media from the database.
+Actor(s): User, Database
+Main Success Scenario:
+1.  The user logs on.
+2.  The user clicks the suggestions button.
+	2.1. The user can click a specific type of media to genertate suggestions for.
+3.  The database generates suggestions fo the user.
+	3.1. The user can view a specific title triggering the View Title use case.
+	3.2. The user can refine their search. (loops back to step 2.)
+	3.3. The user can search for a specific title triggering that use case.
+	3.4.  The user can rate the title.
+Extensions:
+1.a.  A first time user or someone who forgets their informations will be redirected to the Manage Personal Account use case.????
+
+Use Case: Search
+Context: A user looks for a specific title in the database.
+Actor(s): User, Database
+1.  The user logs on.
+2.  The user enters the search information.
+3.  THe database generates matching results and any close results below that.
+	3.1.  The user can choose to view the title.
+	3.2.  The user can choose to rate the title.
+	*3.3. The user can ask for suggestions????
+Extensions:
+1.a.  A first time user or someone who forgets their informations will be redirected to the Manage Personal Account use case.????
+
+Use Case: View Title
+Context: A title is chosen to examine bringing up corresponding information.
+Actor(s): User, Database
+1.  User clicks on link to title page.
+2.  A page generated for that title appears.
+	2.1.  The user chooses too see "More Like This" triggering the Get Suggestions use case
+	2.2.  The user chooses an aspect to search by (director, author, etc.) triggering the Search use case.
+
+
+Classes:
+Boundary: User Interface inherits Titles List, View Title, Main Screen, Account Information/Editor, Advanced Search
+Entity: Account, Title, Preferences
+Control: Database Prompter
+
+Suggestions for TV->Look up Account preferences->Send command to Database to return an ordered list of suggested titles
+
+
+Fab.3: Activity Diagrams finished!
+Feb.5: Class Diagram
+Feb.10: Powerpoint and complete document.
+Feb.12: Present!
