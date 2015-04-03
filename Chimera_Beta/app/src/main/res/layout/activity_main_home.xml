@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="thereal.chimera_beta.HomeActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Books"
+        android:id="@+id/bookButton"
+        android:layout_marginTop="149dp"
+        android:background="@mipmap/ic_launcher"
+        android:layout_marginStart="44dp"
+        android:clickable="true"
+        android:transitionName="Book"
+        android:contentDescription="Book"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Games"
+        android:id="@+id/gameButton"
+        android:background="@mipmap/ic_launcher"
+        android:layout_marginStart="56dp"
+        android:layout_alignTop="@+id/bookButton"
+        android:layout_toEndOf="@+id/bookButton"
+        android:clickable="true"
+        android:transitionName="Game"
+        android:contentDescription="Game" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TV"
+        android:id="@+id/tvButton"
+        android:background="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/movieButton"
+        android:layout_alignStart="@+id/bookButton"
+        android:clickable="true"
+        android:transitionName="TV"
+        android:contentDescription="TV" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movies"
+        android:id="@+id/movieButton"
+        android:background="@mipmap/ic_launcher"
+        android:layout_below="@+id/gameButton"
+        android:layout_alignStart="@+id/gameButton"
+        android:layout_marginTop="39dp"
+        android:clickable="true"
+        android:transitionName="Film"
+        android:contentDescription="Movie" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/settingsButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="Settings" />
+
+</RelativeLayout>
