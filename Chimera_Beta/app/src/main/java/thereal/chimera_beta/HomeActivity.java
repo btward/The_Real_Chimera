@@ -11,30 +11,22 @@ import android.widget.Button;
 
 public class HomeActivity extends ActionBarActivity implements View.OnClickListener {
 
-    public Button bookBttn;
-    public Button gameBttn;
-    public Button tvBttn;
-    public Button movieBttn;
-    public Button settingsBttn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home);
 
-        bookBttn = (Button) findViewById(R.id.bookButton);
+        final Button bookBttn = (Button) findViewById(R.id.bookButton);
         bookBttn.setOnClickListener(this);
-
-        gameBttn = (Button) findViewById(R.id.gameButton);
+        final Button gameBttn = (Button) findViewById(R.id.gameButton);
         gameBttn.setOnClickListener(this);
-
-        tvBttn = (Button) findViewById(R.id.tvButton);
+        final Button tvBttn = (Button) findViewById(R.id.tvButton);
         tvBttn.setOnClickListener(this);
-
-        movieBttn = (Button) findViewById(R.id.movieButton);
+        final Button movieBttn = (Button) findViewById(R.id.movieButton);
         movieBttn.setOnClickListener(this);
-
-        settingsBttn = (Button) findViewById(R.id.settingsButton);
+        final Button settingsBttn = (Button) findViewById(R.id.settingsButton);
         settingsBttn.setOnClickListener(this);
 
     }
@@ -42,9 +34,9 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
     public void onClick(View v){
         Button button = (Button) v;
         CharSequence bttnDscrp = button.getContentDescription();
-        if(((String)bttnDscrp).equalsIgnoreCase("Settings"))
+        if((String)bttnDscrp == "Settings")
             startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-        else if(!((String) bttnDscrp).equalsIgnoreCase("Settings")){
+        else if((String)bttnDscrp != "Settings"){
             Intent typeItem = new Intent(getApplicationContext(), SuggestionsActivity.class);
             typeItem.putExtra("type", bttnDscrp);
             startActivity(typeItem);}

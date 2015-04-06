@@ -44,22 +44,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="thereal.chimera_beta.HomeActivity" />
         </activity>
-        <activity
-            android:name=".AccountListActivity"
-            android:label="@string/title_account_list"
-            android:parentActivityName=".HomeActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="thereal.chimera_beta.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".AccountDetailActivity"
-            android:label="@string/title_account_detail"
-            android:parentActivityName=".AccountListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="thereal.chimera_beta.AccountListActivity" />
-        </activity>
     </application>
 
 </manifest>

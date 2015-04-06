@@ -23,19 +23,11 @@
         android:divider="#ff000000"
         android:longClickable="false"
         android:nestedScrollingEnabled="true"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_below="@+id/searchView"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true"
         android:dividerHeight="1dp"
         android:clickable="true"
         android:clipToPadding="false" />
-
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/searchView"
-        android:layout_alignParentStart="true"
-        android:showDividers="end"
-        android:visibility="visible"></TableLayout>
 </RelativeLayout>
