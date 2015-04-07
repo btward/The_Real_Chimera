@@ -20,6 +20,7 @@ import java.sql.Statement;
 
 import com.mysql.*;
 import java.sql.*;
+import java.util.jar.Attributes;
 
 /*
 import com.mysql.jdbc.Connection;
@@ -65,7 +66,7 @@ public class TitleViewActivity extends ActionBarActivity {
 
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Movie WHERE Director = Stanley Kubrick");
-        String info = rs.toString();
+        String info = rs.getString(1);
         summaryTxt.setText(info);
         System.out.println(info);
         Log.d("myTag", info);
