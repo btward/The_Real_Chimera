@@ -8,7 +8,7 @@
 
     <TextView android:text="Title" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
+        android:id="@+id/titleName"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="22dp" />
@@ -16,23 +16,23 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/textView"
+        android:id="@+id/titleIcon"
+        android:layout_below="@+id/titleName"
         android:layout_centerHorizontal="true"
         android:src="@mipmap/ic_launcher" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
-        android:layout_below="@+id/imageView"
+        android:id="@+id/titleRatingBar"
+        android:layout_below="@+id/titleIcon"
         android:layout_centerHorizontal="true" />
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="160dp"
         android:id="@+id/scrollView"
-        android:layout_below="@+id/ratingBar"
+        android:layout_below="@+id/titleRatingBar"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" >
 
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="More like this"
-        android:id="@+id/button"
+        android:id="@+id/titleSimilar"
         android:layout_below="@+id/scrollView"
         android:layout_centerHorizontal="true" />
 

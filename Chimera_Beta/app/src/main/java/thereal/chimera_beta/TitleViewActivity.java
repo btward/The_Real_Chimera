@@ -5,6 +5,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.mysql.jdbc.*;
@@ -30,12 +33,21 @@ import java.sql.Statement;*/
 
 public class TitleViewActivity extends ActionBarActivity {
     public TextView summaryTxt;
+    public TextView nameTxt;
+    public ImageView iconImg;
+    public RatingBar rating;
+    public Button similarBttn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title_view);
         summaryTxt = (TextView) findViewById(R.id.titleSummary);
+        nameTxt = (TextView) findViewById(R.id.titleName);
+        iconImg = (ImageView) findViewById(R.id.titleIcon);
+        rating = (RatingBar) findViewById(R.id.titleRatingBar);
+        similarBttn = (Button) findViewById(R.id.titleSimilar);
+        summaryTxt.setText("blah blah blah");
         try {
             connectToAndQueryDatabase();
         } catch (SQLException e) {
@@ -53,7 +65,13 @@ public class TitleViewActivity extends ActionBarActivity {
 
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Movie WHERE Director = Stanley Kubrick");
+        String info = rs.toString();
+        summaryTxt.setText(info);
+        System.out.println(info);
+        Log.d("myTag", info);
+        setTitle(info);
 
+        /*
         while (rs.next()) {
             String info = rs.toString();
             summaryTxt.setText(info);
@@ -69,8 +87,8 @@ public class TitleViewActivity extends ActionBarActivity {
             System.out.println(rs.next());
             System.out.println(rs.next());
             System.out.println(rs.next());
-            System.out.println(rs.next());*/
-        }
+            System.out.println(rs.next());
+        }*/
     }
 
 
