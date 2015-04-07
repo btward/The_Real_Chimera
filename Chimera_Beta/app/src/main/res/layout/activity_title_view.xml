@@ -26,7 +26,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/titleRatingBar"
         android:layout_below="@+id/titleIcon"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:stepSize=".5" />
 
     <ScrollView
         android:layout_width="wrap_content"

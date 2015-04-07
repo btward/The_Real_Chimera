@@ -1,62 +1,70 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="385dp"
+    android:layout_height="605dp"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="thereal.chimera_beta.HomeActivity">
+    tools:context="thereal.chimera_beta.HomeActivity"
+    android:background="@mipmap/bckgrd"
+    android:paddingLeft="@dimen/activity_horizontal_margin">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:text="Books"
         android:id="@+id/bookButton"
         android:layout_marginTop="149dp"
-        android:background="@mipmap/ic_launcher"
+        android:background="@mipmap/book_icon"
         android:layout_marginStart="44dp"
         android:clickable="true"
         android:transitionName="Book"
         android:contentDescription="Book"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="false"
+        android:textColor="#00ffffff"
+        android:layout_alignParentEnd="false" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:text="Games"
         android:id="@+id/gameButton"
-        android:background="@mipmap/ic_launcher"
+        android:background="@mipmap/game_icon"
         android:layout_marginStart="56dp"
         android:layout_alignTop="@+id/bookButton"
         android:layout_toEndOf="@+id/bookButton"
         android:clickable="true"
         android:transitionName="Game"
-        android:contentDescription="Game" />
+        android:contentDescription="Game"
+        android:textColor="#00ffffff"
+        android:layout_alignBottom="@+id/bookButton" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:text="TV"
         android:id="@+id/tvButton"
-        android:background="@mipmap/ic_launcher"
+        android:background="@mipmap/tv_icon"
         android:layout_alignTop="@+id/movieButton"
         android:layout_alignStart="@+id/bookButton"
         android:clickable="true"
         android:transitionName="TV"
-        android:contentDescription="TV" />
+        android:contentDescription="TV"
+        android:textColor="#00ffffff" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:text="Movies"
         android:id="@+id/movieButton"
-        android:background="@mipmap/ic_launcher"
+        android:background="@mipmap/movie_icon"
         android:layout_below="@+id/gameButton"
         android:layout_alignStart="@+id/gameButton"
         android:layout_marginTop="39dp"
         android:clickable="true"
         android:transitionName="Film"
-        android:contentDescription="Movie" />
+        android:contentDescription="Movie"
+        android:textColor="#00ffffff" />
 
     <Button
         style="?android:attr/buttonStyleSmall"

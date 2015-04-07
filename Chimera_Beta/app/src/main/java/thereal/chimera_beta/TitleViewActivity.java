@@ -5,33 +5,20 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
-
+import static java.lang.Math.*;
+import java.text.DecimalFormat;
+import java.util.*;
+import thereal.chimera_beta.Categories.*;
 
 import java.sql.*;
 
-/*
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;*/
 
 //import com.mysql.*;
-import java.util.jar.Attributes;
-
-/*
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;*/
 
 
 public class TitleViewActivity extends ActionBarActivity {
@@ -55,22 +42,29 @@ public class TitleViewActivity extends ActionBarActivity {
         iconImg = (ImageView) findViewById(R.id.titleIcon);
         rating = (RatingBar) findViewById(R.id.titleRatingBar);
         similarBttn = (Button) findViewById(R.id.titleSimilar);
-        summaryTxt.setText("blah blah blah");
-        try {
-            connectToAndQueryDatabase();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        Bundle typeT = getIntent().getExtras();
+        final String typeTitle = typeT.getString("type");
+        final String itemName = typeT.getString("title");
+        final String objectItem = typeT.getString("obj");
+        summaryTxt.setText(objectItem);
+        nameTxt.setText(itemName);
+        setTitle(typeTitle);
+        rating.setRating((float) (random() * 5.0));
+        /*
+        switch(typeTitle){
+            case "Book":
+                break;
+            case "Movie":
+                break;
+            case "Game":
+                break;
+            case "TV":
+                break;
+        }*/
+        //connectToAndQueryDatabase();
     }
 
-    public void connectToAndQueryDatabase() throws IllegalAccessException, InstantiationException,
-            ClassNotFoundException, SQLException{
+    public Connection connectToAndQueryDatabase() {
         summaryTxt.setText("connecting to database");
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -80,6 +74,9 @@ public class TitleViewActivity extends ActionBarActivity {
             con = DriverManager.getConnection(url, username, password);
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT * FROM movie");
+            if(rs == null)
+                summaryTxt.setText("You Failed");
+
             /*
             rs.next();
             String info = rs.getString("Name");
@@ -89,8 +86,8 @@ public class TitleViewActivity extends ActionBarActivity {
             setTitle(info);*/
 
             while (rs.next()) {
-                info = rs.getString(1);
-                summaryTxt.setText(info);
+                info = rs.getString("Genre");
+                summaryTxt.setText("running while");
                 System.out.println(info);
                 /*
                 System.out.println(rs.next());
@@ -106,12 +103,13 @@ public class TitleViewActivity extends ActionBarActivity {
             rs.close();
             stmt.close();
             con.close();
-            if(info == null)
-                summaryTxt.setText("You Failed");
+
         }
         catch (Exception e){
             e.printStackTrace();
         }
+
+        return  con;
     }
 
 
