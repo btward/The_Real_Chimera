@@ -5,7 +5,7 @@ import java.lang.reflect.Array;
 
 public class MovieObj extends CategoryObj {
     String[] fields = {"Name", "Genre", "Director", "Screenwriter", "Producer", "Actor",
-            "RottenTomatoes", "Oscars"};
+            "RottenTomatoes", "Oscars", "Date"};
     String name, genre, director, screenwriter, producer, actor, rottenTomatoes, oscars;
 
     public MovieObj(){

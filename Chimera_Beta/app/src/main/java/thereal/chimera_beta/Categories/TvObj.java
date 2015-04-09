@@ -2,7 +2,7 @@ package thereal.chimera_beta.Categories;
 
 public class TvObj extends CategoryObj {
     String[] fields = {"Name", "Genre", "Director", "Screenwriter", "Showrunner",
-            "Length", "RottenTomatoes", "Emmies"};
+            "Length", "RottenTomatoes", "Emmies", "Date"};
     String name, genre, director, screenwriter, showrunner, length, rottenTomatoes, emmies;
 
     public TvObj(){

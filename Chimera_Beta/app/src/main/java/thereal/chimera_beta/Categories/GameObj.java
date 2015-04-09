@@ -2,7 +2,7 @@ package thereal.chimera_beta.Categories;
 
 
 public class GameObj extends CategoryObj {
-    String[] fields = {"Name", "Genre", "Developer", "Length", "Metacritic", "Platform"};
+    String[] fields = {"Name", "Genre", "Developer", "Length", "Metacritic", "Platform", "Date"};
     String name, genre, developer, length, metacritic, platform;
 
     public GameObj(){

@@ -16,7 +16,8 @@
         android:inputType="text"
         android:background="#ffffffff"
         android:layout_alignEnd="@+id/userPassword"
-        android:layout_alignStart="@+id/userPassword" />
+        android:layout_alignStart="@+id/userPassword"
+        android:hint="username" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -26,7 +27,8 @@
         android:id="@+id/userPassword"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:background="#ffffffff" />
+        android:background="#ffffffff"
+        android:hint="password" />
 
     <Button
         android:layout_width="wrap_content"
@@ -38,4 +40,14 @@
         android:layout_below="@+id/userPassword"
         android:layout_alignStart="@+id/userPassword"
         android:layout_alignEnd="@+id/userPassword" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@mipmap/chimera_img1"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/userName"
+        android:layout_alignStart="@+id/userName"
+        android:layout_alignBottom="@+id/userName" />
 </RelativeLayout>

@@ -3,7 +3,7 @@ package thereal.chimera_beta.Categories;
 import android.os.Parcelable;
 
 public class BookObj extends CategoryObj {
-    String[] fields = {"Name", "Genre", "Author", "Length"};
+    String[] fields = {"Name", "Genre", "Author", "Length", "Date"};
     String name, genre, author, length;
 
     public BookObj(){
