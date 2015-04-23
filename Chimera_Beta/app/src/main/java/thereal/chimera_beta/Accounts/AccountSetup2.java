@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import thereal.chimera_beta.HomeActivity;
+import thereal.chimera_beta.MainActivity;
 import thereal.chimera_beta.R;
 
 public class AccountSetup2 extends ActionBarActivity {
@@ -22,6 +23,7 @@ public class AccountSetup2 extends ActionBarActivity {
         signUpTxt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             }
         });
