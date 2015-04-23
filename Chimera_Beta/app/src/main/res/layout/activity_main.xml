@@ -50,4 +50,13 @@
         android:layout_alignEnd="@+id/userName"
         android:layout_alignStart="@+id/userName"
         android:layout_alignBottom="@+id/userName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Sign Up!"
+        android:id="@+id/signUpBttn"
+        android:layout_below="@+id/loginButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

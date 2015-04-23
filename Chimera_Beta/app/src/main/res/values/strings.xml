@@ -7,4 +7,7 @@
     <string name="title_activity_suggestions">Suggestions</string>
     <string name="title_activity_settings1">Settings</string>
     <string name="title_activity_title_view">TitleViewActivity</string>
+    <string name="title_activity_create_account">CreateAccount</string>
+    <string name="title_activity_account_setup1">AccountSetup1</string>
+    <string name="title_activity_account_setup2">AccountSetup2</string>
 </resources>
