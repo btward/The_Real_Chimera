@@ -6,18 +6,18 @@ import java.util.prefs.Preferences;
 
 public class Account {
 
-    private String userName, password, email;
+    public String name, password, email;
     public Pref prefs;
 
     public Account(){}
 
     public Account(String user, String pass){
-        userName = user;
+        name = user;
         password = pass;
     }
 
     public Account(String user, String pass, String mail){
-        userName = user;
+        name = user;
         password = pass;
         email = mail;
     }
@@ -27,7 +27,13 @@ public class Account {
     }
 
     public String getUserName(){
-        return userName;
+        return name;
+    }
+
+    public void setUp(String user, String pass, String mail){
+        name = user;
+        password = pass;
+        email = mail;
     }
 
 }

@@ -1,6 +1,8 @@
 package thereal.chimera_beta;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,21 +11,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import thereal.chimera_beta.Accounts.Account;
 import thereal.chimera_beta.Accounts.CreateAccount;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    public static Account user001 = new Account();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         final Button loginBttn = (Button) findViewById(R.id.loginButton);
         loginBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                /*Handler handler = new Handler(Looper.getMainLooper());
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //Intent intent = new Intent (MyActivity.this, NextActivity.class);
+                        //startActivity(intent);
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    }
+                });*/
             }
         });
 

@@ -17,8 +17,8 @@ public class AccountSetup1 extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_setup1);
 
-        final TextView signUpTxt = (TextView) findViewById(R.id.continueBttn);
-        signUpTxt.setOnClickListener(new View.OnClickListener(){
+        final TextView continueB = (TextView) findViewById(R.id.continueBttn);
+        continueB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 startActivity(new Intent(getApplicationContext(), AccountSetup2.class));

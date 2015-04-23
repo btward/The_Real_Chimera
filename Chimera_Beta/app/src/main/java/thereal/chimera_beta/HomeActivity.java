@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class HomeActivity extends ActionBarActivity implements View.OnClickListener {
@@ -28,6 +29,9 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
         movieBttn.setOnClickListener(this);
         final Button settingsBttn = (Button) findViewById(R.id.settingsButton);
         settingsBttn.setOnClickListener(this);
+
+        final TextView welcomeTxt = (TextView) findViewById(R.id.helloTxtView);
+        welcomeTxt.setText("Hello "+MainActivity.user001.getUserName() );
 
     }
 

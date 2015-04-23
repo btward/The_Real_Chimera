@@ -6,20 +6,28 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import thereal.chimera_beta.MainActivity;
 import thereal.chimera_beta.R;
+import thereal.chimera_beta.SuggestionsActivity;
 
 
 public class CreateAccount extends ActionBarActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        final TextView signUpTxt = (TextView) findViewById(R.id.enterContinueBttn);
-        signUpTxt.setOnClickListener(new View.OnClickListener(){
+        final TextView enterContinueB = (TextView) findViewById(R.id.enterContinueBttn);
+        final EditText userN = (EditText) findViewById(R.id.userName);
+        final EditText userP = (EditText) findViewById(R.id.userPassword);
+        final EditText userE = (EditText) findViewById(R.id.userEmail);
+        //MainActivity.user001.name = userN.getText().toString();
+        enterContinueB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 startActivity(new Intent(getApplicationContext(), AccountSetup1.class));
