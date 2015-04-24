@@ -25,6 +25,18 @@ public class BookObj extends CategoryObj {
         length = length1;
     }
 
+    @Override
+    public String getName(){
+        return name;
+    }
+
+    public String getGenre(){
+        return genre;
+    }
+
+    public String getAuthor(){
+        return author;
+    }
 
     @Override
     public String toString(){

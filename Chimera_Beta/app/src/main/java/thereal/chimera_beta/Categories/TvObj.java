@@ -35,6 +35,14 @@ public class TvObj extends CategoryObj {
         emmies = emmies1;
     }
 
+    public String getGenre(){
+        return genre;
+    }
+
+    public String getDirector(){
+        return director;
+    }
+
     @Override
     public String toString(){
         String output = fields[1] + ": " + genre +"\n"+

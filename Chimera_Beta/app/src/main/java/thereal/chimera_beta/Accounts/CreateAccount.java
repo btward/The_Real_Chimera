@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +23,7 @@ import thereal.chimera_beta.SuggestionsActivity;
 public class CreateAccount extends ActionBarActivity {
 
     String myName;
+    TextView userN, userP, userE;
 
 
     @Override
@@ -30,10 +32,30 @@ public class CreateAccount extends ActionBarActivity {
         setContentView(R.layout.activity_create_account);
 
         final Button enterContinueB = (Button) findViewById(R.id.enterContinueBttn);
-        /*final TextView userN = (TextView) this.findViewById(R.id.userName);
-        final EditText userP = (EditText) findViewById(R.id.userPassword);
-        final EditText userE = (EditText) findViewById(R.id.userEmail);*/
-        MainActivity.user001.name = "Wiz";
+        userN = (TextView) this.findViewById(R.id.userName);
+        /*userN.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                MainActivity.user001.name = v.getText().toString();
+                return false;
+            }
+        });*/
+        userP = (EditText) findViewById(R.id.userPassword);
+        /*userP.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                MainActivity.user001.password = v.getText().toString();
+                return false;
+            }
+        });*/
+        userE = (EditText) findViewById(R.id.userEmail);
+        /*userE.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                MainActivity.user001.email = v.getText().toString();
+                return false;
+            }
+        });*/
         enterContinueB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -41,6 +63,8 @@ public class CreateAccount extends ActionBarActivity {
                 startActivity(new Intent(getApplicationContext(), AccountSetup1.class));
             }
         });
+        /*MainActivity.user001 = new Account(userN.getText().toString(), userP.getText().toString(),
+                userE.getText().toString());*/
     }
 
 

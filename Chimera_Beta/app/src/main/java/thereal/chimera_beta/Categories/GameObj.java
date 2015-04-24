@@ -33,6 +33,14 @@ public class GameObj extends CategoryObj {
         platform = platform1;
     }
 
+    public String getGenre(){
+        return genre;
+    }
+
+    public String getDeveloper(){
+        return developer;
+    }
+
     @Override
     public String toString(){
         String output = fields[1] + ": " + genre +"\n"+

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -27,8 +29,21 @@ public class AccountSetup2 extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_setup2);
         final TextView signUpTxt = (TextView) findViewById(R.id.doneBttn);
+        final EditText creatorTxt = (EditText) findViewById(R.id.top1Box);
+        final EditText movieTxt = (EditText) findViewById(R.id.top2Box);
         final Spinner genreDropdown = (Spinner) findViewById(R.id.categorySpinner);
         ArrayAdapter<String> adapterDD = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genreItems);
+        genreDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity.user001.prefs.favGenres[0] = genreItems[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                MainActivity.user001.prefs.favGenres[0] = " ";
+            }
+        });
         genreDropdown.setAdapter(adapterDD);
         signUpTxt.setOnClickListener(new View.OnClickListener(){
             @Override

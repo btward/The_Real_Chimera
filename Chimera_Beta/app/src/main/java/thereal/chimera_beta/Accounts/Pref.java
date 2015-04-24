@@ -4,11 +4,13 @@ package thereal.chimera_beta.Accounts;
 public class Pref {
     public int genre, book, movie, tv, game, creator;
     int zero = genre = book = movie = tv = game = creator = 0;
-    public String[] favGanres, favBooks, favMovies, favTV, favGames, favCreator, viewed, liked, disliked;
+    public String[] favGenres, favBooks, favMovies, favTV, favGames, favCreator, viewed, liked, disliked;
     public Object[] myTops;
 
     public Pref(){
-
+        favGenres = favBooks = favMovies = favTV = favGames = favCreator =
+                viewed = liked = disliked = new String[66];
+        myTops = new Object[66];
     }
 
     public void setBasicRatings(int g1, int b1, int m1, int t1, int gm1, int c1){
