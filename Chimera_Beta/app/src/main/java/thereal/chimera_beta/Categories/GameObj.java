@@ -10,6 +10,18 @@ public class GameObj extends CategoryObj {
         type = "game";
     }
 
+    public GameObj(String name1){
+        super();
+        type = "game";
+        name = name1;
+    }
+
+    public GameObj(String name1, String type1){
+        super();
+        type = "game";
+        name = name1;
+    }
+
     public GameObj(String name1,String genre1,String developer1,String length1,
                    String metacritic1,String platform1){
         type = "game";

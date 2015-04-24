@@ -7,7 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
+
+import thereal.chimera_beta.Accounts.AccountSetup1;
 
 
 public class HomeActivity extends ActionBarActivity implements View.OnClickListener {
@@ -27,11 +30,21 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
         tvBttn.setOnClickListener(this);
         final Button movieBttn = (Button) findViewById(R.id.movieButton);
         movieBttn.setOnClickListener(this);
+        final Button whateverBttn = (Button) findViewById(R.id.whateverButton);
+        whateverBttn.setOnClickListener(this);
+        final Button searchBttn = (Button) findViewById(R.id.searchButton);
+        searchBttn.setOnClickListener(this);
         final Button settingsBttn = (Button) findViewById(R.id.settingsButton);
-        settingsBttn.setOnClickListener(this);
+        settingsBttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AccountSetup1.class));
+            }
+        });
 
-        final TextView welcomeTxt = (TextView) findViewById(R.id.helloTxtView);
-        welcomeTxt.setText("Hello "+MainActivity.user001.getUserName() );
+        /*final TextView welcomeTxt = (TextView) findViewById(R.id.helloTxtView);
+        welcomeTxt.setText("Hello "+MainActivity.user001.getUserName() + "\n"
+                + "Genre rating is: " + String.valueOf(MainActivity.user001.prefs.genre));*/
 
     }
 
@@ -39,7 +52,7 @@ public class HomeActivity extends ActionBarActivity implements View.OnClickListe
         Button button = (Button) v;
         CharSequence bttnDscrp = button.getContentDescription();
         if((String)bttnDscrp == "Settings")
-            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+            startActivity(new Intent(getApplicationContext(), AccountSetup1.class));
         else if((String)bttnDscrp != "Settings"){
             Intent typeItem = new Intent(getApplicationContext(), SuggestionsActivity.class);
             typeItem.putExtra("type", bttnDscrp);

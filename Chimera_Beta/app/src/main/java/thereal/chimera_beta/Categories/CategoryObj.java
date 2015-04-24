@@ -15,6 +15,15 @@ public class CategoryObj extends Object {
         */
     }
 
+    public CategoryObj(String name1){
+        name = name1;
+    }
+
+    public CategoryObj(String name1, String type1){
+        name = name1;
+        type = type1;
+    }
+
     public String[] getFields(){
         return fields;}
 
@@ -53,7 +62,7 @@ public class CategoryObj extends Object {
     }
 
     public String toString(){
-        return null;
+        return name + " " + type;
     }
 
 }

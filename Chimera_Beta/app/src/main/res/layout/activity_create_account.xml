@@ -9,13 +9,16 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="text"
+        android:text=""
         android:ems="10"
         android:id="@+id/enterUserName"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="123dp"
-        android:hint="unsername" />
+        android:hint="unsername"
+        android:editable="true"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -25,7 +28,9 @@
         android:id="@+id/enterPassword"
         android:layout_below="@+id/enterUserName"
         android:layout_alignStart="@+id/enterUserName"
-        android:hint="password" />
+        android:hint="password"
+        android:editable="true"
+        android:enabled="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,7 +40,9 @@
         android:id="@+id/userEmail"
         android:layout_below="@+id/enterPassword"
         android:layout_alignEnd="@+id/enterPassword"
-        android:hint="email" />
+        android:hint="email"
+        android:editable="true"
+        android:enabled="true" />
 
     <Button
         android:layout_width="wrap_content"

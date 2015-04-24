@@ -6,7 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 import thereal.chimera_beta.HomeActivity;
 import thereal.chimera_beta.MainActivity;
@@ -14,12 +19,17 @@ import thereal.chimera_beta.R;
 
 public class AccountSetup2 extends ActionBarActivity {
 
+    String[] genreItems = {"Action", "Fantasy", "Comedy", "Sci-Fi", "War", "Drama", "Western",
+    "Mystery", "Romance", "Horror", "Superhero", "FPS", "Puzzle"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_setup2);
-
         final TextView signUpTxt = (TextView) findViewById(R.id.doneBttn);
+        final Spinner genreDropdown = (Spinner) findViewById(R.id.categorySpinner);
+        ArrayAdapter<String> adapterDD = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genreItems);
+        genreDropdown.setAdapter(adapterDD);
         signUpTxt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

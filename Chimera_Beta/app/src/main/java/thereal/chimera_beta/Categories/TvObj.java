@@ -10,6 +10,18 @@ public class TvObj extends CategoryObj {
         type = "tv";
     }
 
+    public TvObj(String name1){
+        super();
+        type = "tv";
+        name = name1;
+    }
+
+    public TvObj(String name1, String type){
+        super();
+        type = "tv";
+        name = name1;
+    }
+
     public TvObj(String name1,String genre1,String director1,String screenwriter1,
                  String showrunner1,String length1,String rottenTomatoes1,String emmies1){
         type = "tv";

@@ -13,6 +13,18 @@ public class MovieObj extends CategoryObj {
         type = "movie";
     }
 
+    public MovieObj(String name1){
+        super();
+        type = "movie";
+        name = name1;
+    }
+
+    public MovieObj(String name1, String type1){
+        super();
+        type = "movie";
+        name = name1;
+    }
+
     public MovieObj(String name1,String genre1,String director1,String screenwriter1,
                     String producer1,String actor1,String rottenTomatoes1,String oscars1){
         type = "movie";

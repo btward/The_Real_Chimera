@@ -12,12 +12,24 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import thereal.chimera_beta.Categories.*;
 
 
 public class SuggestionsActivity extends ActionBarActivity {
 
     String[] listItems;
+    String[] listItems1;
+    ArrayList<BookObj> booksArry;
+    ArrayList<GameObj> gamesArry = new ArrayList<GameObj>();
+    ArrayList<MovieObj> moviesArry = new ArrayList<MovieObj>();
+    ArrayList<TvObj> tvArry = new ArrayList<TvObj>();
+    ArrayList<CategoryObj> categoryArry = new ArrayList<CategoryObj>();
+    ArrayList<CategoryObj> searchArry = new ArrayList<CategoryObj>();
+    ListView suggestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,48 +38,88 @@ public class SuggestionsActivity extends ActionBarActivity {
         Bundle typeS = getIntent().getExtras();
         final String typeSuggestion = typeS.getString("type");
         setTitle(typeSuggestion + " Suggestions");
+        suggestions = (ListView) findViewById(R.id.suggestionsList);
 
-        final ListView suggestions = (ListView) findViewById(R.id.suggestionsList);
         BookObj book1 = new BookObj("The Hobbit", "Fantasy", "J.R.R. Tolkien", "Short");
-        BookObj book2 = new BookObj("It", "Horror", "Stephen King", "Long");
-        BookObj book3 = new BookObj("The Great Hunt", "Fantasy", "Robert Jordan", "Long");
+        BookObj book2 = new BookObj("The Hobbit", "Fantasy", "J.R.R. Tolkien", "Short");
+        BookObj book3 = new BookObj("The Hobbit", "Fantasy", "J.R.R. Tolkien", "Short");
         GameObj game1 = new GameObj("Halo: Combat Evolved", "FPS", "Bungie", "Medium", "90","Xbox");
-        GameObj game2 = new GameObj("Bloodborne", "RPG", "From Software", "Medium", "93", "PS4");
-        MovieObj movie1 = new MovieObj("Interstellar", "Sci-fi", "Christopher Nolan", "Christopher Nolan", "Emma Thomas", "Matthe McConoughey", "72", "0");
-        MovieObj movie2 = new MovieObj("The Shining", "Horror", "Stanley Kubrick", "Diane Johnson", "Stanley Kubrick", "Jack Nicholson", "92", "0");
-        MovieObj movie3 = new MovieObj("The Dark Knight", "Superhero", "Christopher Nolan", "Jonathon Nolan", "Emma Thomas", "Christian Bale", "94", "2");
+        MovieObj movie1 = new MovieObj("Django Unchained", "Action", "Quentin Tarantino", "Quentin Tarantino", "Leonardo DiCaprio", "", "86", "1");
         TvObj tv1 = new TvObj("Doctor Who", "Sci-fi", "Russel T. Davies", "Stephen Moffat", "Stephen Moffat", "Long", "91", "1");
-        TvObj tv2 = new TvObj("Buffy the Vampire Slayer", "Fantasy", "Joss Whedon", "Jane Espenson", "Joss Whedon", "Long", "100", "0");
+
         final BookObj[] books = {book1, book2, book3};
-        final GameObj[] games = {game1, game2};
-        final MovieObj[] movies = {movie1, movie2, movie3};
-        final TvObj[] shows = {tv1, tv2};
+        final GameObj[] games = {game1};
+        final MovieObj[] movies = {movie1};
+        final TvObj[] shows = {tv1};
+        booksArry = new ArrayList<BookObj>();
+        booksArry.add(book1);
+        booksArry.add(book2);
+        booksArry.add(book3);
+        gamesArry.add(game1);
+        moviesArry.add(movie1);
+        tvArry.add(tv1);
+        categoryArry.add(new CategoryObj("Star Wars: Episode V - Revenge of the Sith", "movie"));
+
+        final ArrayList<CategoryObj> cats = new ArrayList<CategoryObj>();
+        cats.add(new CategoryObj("Star Wars: Episode V - Revenge of the Sith", "movie"));
+        final ArrayList<CategoryObj> twd = new ArrayList<CategoryObj>();
+        twd.add(new  CategoryObj("The Walking Dead (Comics)", "book"));
 
         String[] bookTitles = {"The Hobbit", "It", "The Eye of the World", "The Great Hunt"};
         String[] gameTitles = {"Halo: Combat Evolved", "Bloodborne"};
-        String[] movieTitles = {"Interstellar", "The Shining", "The Dark Knight"};
-        String[] tvTitles = {"Doctor Who", "Buffy the Vampire Slayer"};
+        String[] movieTitles = {"Django Unchained"};
+        String[] tvTitles = {"Doctor Who"};
+        final String[] anyTitles = {"Star Wars: Episode V - Revenge of the Sith"};
+        final String[] twdTitles = {"The Walking Dead (Comics)"};
+
         ArrayAdapter<String> adapter = null;
         switch(typeSuggestion){
             case "Book":
                 listItems = bookTitles;
+                listItems1 = new String[booksArry.size()];
+                int i = 0;
+                for(BookObj item : booksArry){
+                    listItems1[i]=item.getName();
+                    i++;}
                 adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1, bookTitles);
+                        android.R.layout.simple_list_item_1, listItems1);
                 break;
+
             case "Movie":
-                listItems = movieTitles;
+                //listItems = movieTitles;
+                /*for(MovieObj item : moviesArry){
+                    listItems1.add(item.getName());}*/
                 adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1, movieTitles);
+                        android.R.layout.simple_list_item_1, listItems);
                 break;
+
             case "Game":
-                listItems = gameTitles;
+                //listItems = gameTitles;
+                /*for(GameObj item : gamesArry){
+                    listItems1.add(item.getName());}*/
                 adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1, gameTitles);
+                        android.R.layout.simple_list_item_1, listItems);
                 break;
+
             case "TV":
-                listItems = tvTitles;
+                //listItems = tvTitles;
+                /*for(TvObj item : tvArry){
+                    listItems1.add(item.getName());}*/
                 adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1, tvTitles);
+                        android.R.layout.simple_list_item_1, listItems);
+                break;
+            case "any":
+                //listItems = tvTitles;
+                /*for(CategoryObj item : categoryArry){
+                    listItems1.add(item.getName());}*/
+                adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_list_item_1, listItems);
+                break;
+            case "search":
+                //listItems = tvTitles;
+                ArrayList<CategoryObj> searchyArry = new ArrayList<CategoryObj>();
+                adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_list_item_1, listItems);
                 break;
         }
         /*
@@ -85,16 +137,22 @@ public class SuggestionsActivity extends ActionBarActivity {
                 Intent newView = new Intent(getApplicationContext(), TitleViewActivity.class);
                 switch (typeSuggestion) {
                     case "Book":
-                        newView.putExtra("obj", books[position].toString());
+                        newView.putExtra("obj", booksArry.toArray()[position].toString());
                         break;
                     case "Movie":
-                        newView.putExtra("obj", movies[position].toString());
+                        newView.putExtra("obj", moviesArry.toArray()[position].toString());
                         break;
                     case "Game":
-                        newView.putExtra("obj", games[position].toString());
+                        newView.putExtra("obj", gamesArry.toArray()[position].toString());
                         break;
                     case "TV":
-                        newView.putExtra("obj", shows[position].toString());
+                        newView.putExtra("obj", tvArry.toArray()[position].toString());
+                        break;
+                    case "any":
+                        newView.putExtra("obj", categoryArry.toArray()[position].toString());
+                        break;
+                    case "search":
+                        newView.putExtra("obj", searchArry.toArray()[position].toString());
                         break;
                 }
                 newView.putExtra("title", listItems[position]);

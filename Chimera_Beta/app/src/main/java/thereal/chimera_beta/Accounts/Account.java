@@ -7,9 +7,10 @@ import java.util.prefs.Preferences;
 public class Account {
 
     public String name, password, email;
-    public Pref prefs;
+    public Pref prefs = new Pref();
 
-    public Account(){}
+    public Account(
+    ){}
 
     public Account(String user, String pass){
         name = user;

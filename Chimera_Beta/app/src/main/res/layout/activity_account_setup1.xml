@@ -30,7 +30,8 @@
         android:layout_below="@+id/textView2"
         android:layout_alignEnd="@+id/textView"
         android:layout_alignStart="@+id/textView"
-        android:indeterminate="false" />
+        android:indeterminate="false"
+        android:contentDescription="genre" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +49,8 @@
         android:layout_below="@+id/textView3"
         android:layout_alignStart="@+id/genreSeekBar"
         android:layout_alignEnd="@+id/genreSeekBar"
-        android:indeterminate="false" />
+        android:indeterminate="false"
+        android:contentDescription="book" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,7 +68,8 @@
         android:layout_below="@+id/textView4"
         android:layout_alignStart="@+id/bookSeekBar"
         android:layout_alignEnd="@+id/bookSeekBar"
-        android:indeterminate="false" />
+        android:indeterminate="false"
+        android:contentDescription="movie" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -83,7 +86,8 @@
         android:id="@+id/tvSeekBar"
         android:layout_below="@+id/textView5"
         android:layout_alignStart="@+id/movieSeekBar"
-        android:layout_alignEnd="@+id/movieSeekBar" />
+        android:layout_alignEnd="@+id/movieSeekBar"
+        android:contentDescription="tv" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -100,7 +104,8 @@
         android:id="@+id/gameSeekBar"
         android:layout_below="@+id/textView6"
         android:layout_alignStart="@+id/tvSeekBar"
-        android:layout_alignEnd="@+id/tvSeekBar" />
+        android:layout_alignEnd="@+id/tvSeekBar"
+        android:contentDescription="game" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -117,7 +122,8 @@
         android:id="@+id/creatorSeekBar"
         android:layout_below="@+id/textView7"
         android:layout_alignStart="@+id/gameSeekBar"
-        android:layout_alignEnd="@+id/gameSeekBar" />
+        android:layout_alignEnd="@+id/gameSeekBar"
+        android:contentDescription="creator" />
 
     <Button
         android:layout_width="wrap_content"

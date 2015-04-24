@@ -11,6 +11,12 @@ public class BookObj extends CategoryObj {
         type = "book";
     }
 
+    public BookObj(String name1){
+        super();
+        type = "book";
+        name = name1;
+    }
+
     public BookObj(String name1, String genre1, String author1, String length1){
         type = "book";
         name = name1;
